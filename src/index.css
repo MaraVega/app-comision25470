@@ -1,0 +1,28 @@
+.cartWidget, .header{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header li{
+  list-style: none;
+} 
+
+a{
+  text-decoration: none;
+}
+
+.saludo{
+  text-align: center;
+}
+.buttonContainer{
+  max-width: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttonContainer button{
+  margin: 0.1rem;
+}
+.itemDetail{
+  color: red;
+}
