@@ -12,20 +12,18 @@ const ItemDetailContainer = (props) => {
 
     useEffect(() => {
         const miCollection = collection(db, "utiles") 
-        const filtroPorId = query(miCollection, where("id", "==", Number (id)))
-            const lista = getDocs(filtroPorId)
-            lista
+        const filtroPorId = query(miCollection, where("id", "==", id))
+        const lista = getDocs(filtroPorId)
+        lista
             .then(respuesta => setProducto(respuesta.docs.map(doc=>doc.data())[0]))
-            .catch((error) => {
-                console.log("error");
-
-            })
+            .catch((error) => console.log("error item detail"))
 
     });
+
     return (
         <div className='itemDetailContainer'>
-        <ItemDetail producto={producto}/>
-    </div>
+            <ItemDetail producto={producto}/>
+        </div>
     )
 }
 

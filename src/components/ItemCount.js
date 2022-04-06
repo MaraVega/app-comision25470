@@ -19,7 +19,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
     }
     function miOnAdd() {
         onAdd(contador)
-        console.log("funcion de item count")
+        // console.log("funcion de item count")
     }
     return ( 
         <>

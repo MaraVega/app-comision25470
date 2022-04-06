@@ -6,8 +6,10 @@ import { db } from '../Firebase'
 import { getDocs, collection, query, where } from 'firebase/firestore'
 
 const ItemListContainer = (props) => {
+
   const [productos, setProductos] = useState([])
   const {categoria}=useParams();
+  
   useEffect(() => {
     if(!categoria){
       const miCollection = collection(db, "utiles") 
@@ -21,10 +23,10 @@ const ItemListContainer = (props) => {
       const lista = getDocs(filtroPorCategoria)
       lista
         .then((respuesta) =>setProductos(respuesta.docs.map((doc) => doc.data())))
-        .catch((error) => console.log("error"))
+        .catch((error) => console.log("error item list"))
     }
 },[categoria]);
-console.log(productos)
+// console.log(productos)
   return (
     <>
       <div className='saludo'>{props.greeting}</div>
