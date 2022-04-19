@@ -21,8 +21,8 @@ function ItemDetail({ producto }) {
       <h3>{producto.nombre}</h3>
       <p>{producto.precio}</p>
       <p>{producto.descripcion}</p>
-      {/* <img src={producto.img} /> */}
-      <ItemCount initial={1} stock={producto.stock} onAdd={onAdd} />
+      <img src={producto.img} alt=""/>
+      {/* <ItemCount initial={1} stock={producto.stock} onAdd={onAdd} /> */}
       {confCompra ? <ItemCount initial={1} stock={producto.stock} onAdd={onAdd} /> : <Link to='/carrito'><p>Ir al carrito</p></Link>}
       <p></p>
     </div>

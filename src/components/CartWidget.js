@@ -6,17 +6,19 @@ import { useContext } from "react";
 import {contexto} from "./CartContext" 
 
 const CartWidget = () => {
-  const{calcularTotaProductos}=useContext(contexto);
+  const{totalProductos}=useContext(contexto);
 
   return (
-    <>
-    {calcularTotaProductos()>0 ?<div className='cartWidget'>
+    <div>
+
+    {totalProductos>0 ?<div className='cartWidget'>
       <Link to="/carrito">
         <FontAwesomeIcon icon={faShoppingCart}/>
       </Link>
-      <p>{calcularTotaProductos()}</p>
+      <p>{totalProductos}</p>
     </div>:null}
-    </>
+    </div>
+   
         
   )
 }

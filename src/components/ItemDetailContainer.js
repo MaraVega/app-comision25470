@@ -3,7 +3,7 @@ import ItemDetail from './ItemDetail';
 // import utiles from '../Utiles';
 import{db} from '../Firebase'
 import {useParams} from 'react-router-dom'
-import { collection, where, query, getDocs } from 'firebase/firestore';
+import { collection, where, query, getDocs, } from 'firebase/firestore';
 
 const ItemDetailContainer = (props) => {
 
@@ -12,7 +12,7 @@ const ItemDetailContainer = (props) => {
 
     useEffect(() => {
         const miCollection = collection(db, "utiles") 
-        const filtroPorId = query(miCollection, where("id", "==", id))
+        const filtroPorId = query(miCollection, where("id", "==", Number(id)))
         const lista = getDocs(filtroPorId)
         lista
             .then(respuesta => setProducto(respuesta.docs.map(doc=>doc.data())[0]))
